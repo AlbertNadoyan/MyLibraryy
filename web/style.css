@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu_container{
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.menu_container>a{
+    padding-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.menu_container>a:hover{
+    color: green;
+    font-size: 1.8em;
+}
+
+.authorTable{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    border: 2px solid black;
+    margin: auto;
+    text-align: center;
+}
+
+.tableName>th{
+    width: 120px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.tableId{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.editTable>a{
+    color: green;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.deleteTable>a{
+    color: red;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.editTable>a:hover{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.deleteTable>a:hover{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.addData{
+    margin: auto;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.addData>input, textarea{
+    margin-bottom: 20px;
+}
+
+.addData>input{
+    padding-bottom: 10px;
+}
+
+.priceAndauthor{
+    width: 100px;
+}
+
+.add{
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: green;
+    color: white;
+    border-radius: 3px;
+}
+
