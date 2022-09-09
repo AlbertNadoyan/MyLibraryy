@@ -11,13 +11,14 @@ public class AuthorManager {
     private Connection connection = DBConnectionProvider.getInstance().getConnection();
 
     public void addAuthor(Author author){
-        String sql = "insert into author (name, surname, email, age) values (?, ?, ?, ?)";
+        String sql = "insert into author (name, surname, email, age, author_pic) values (?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, author.getName());
             ps.setString(2, author.getSurname());
             ps.setString(3, author.getEmail());
             ps.setInt(4, author.getAge());
+            ps.setString(5, author.getAuthorPic());
 
             ps.executeUpdate();
 
@@ -55,6 +56,7 @@ public class AuthorManager {
                 .surname(resultSet.getString(3))
                 .email(resultSet.getString(4))
                 .age(resultSet.getInt(5))
+                .authorPic(resultSet.getString(6))
                 .build();
     }
 
@@ -96,6 +98,7 @@ public class AuthorManager {
             preparedStatement.setString(3, author.getEmail());
             preparedStatement.setInt(4, author.getAge());
             preparedStatement.setInt(5, author.getId());
+//            preparedStatement.setString(5, author.getAuthorPic());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

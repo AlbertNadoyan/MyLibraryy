@@ -13,11 +13,12 @@
 </head>
 <body>
 <h1>Input author data</h1>
-<form action="/author/add" method="post" class="addData">
+<form action="/author/add" method="post" class="addData" enctype="multipart/form-data">
   <input type="text" name="name" placeholder="input name"><br>
   <input type="text" name="surname" placeholder="input surname"><br>
   <input type="email" name="email" placeholder="input email"><br>
   <input class="priceAndauthor" type="number" name="age" min="20" max="100" placeholder="input age"><br>
+  <input type="file" name="authorPic">
   <input class="add" type="submit" value="ADD AUTHOR">
 </form>
 

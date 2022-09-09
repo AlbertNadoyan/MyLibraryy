@@ -4,6 +4,7 @@ import manager.AuthorManager;
 import manager.BookManager;
 import model.Author;
 import model.Book;
+import model.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -17,9 +18,15 @@ public class AddBookServlet extends HttpServlet {
     private AuthorManager authorManager = new AuthorManager();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Author> all = authorManager.getAllAuthor();
-        request.setAttribute("authors", all);
-        request.getRequestDispatcher("/WEB-INF/addBook.jsp").forward(request, response);
+        User user = (User) request.getSession().getAttribute("user");
+        if(user == null){
+            response.sendRedirect("/");
+        }else {
+            List<Author> all = authorManager.getAllAuthor();
+            request.setAttribute("authors", all);
+            request.getRequestDispatcher("/WEB-INF/addBook.jsp").forward(request, response);
+        }
+
     }
 
     @Override
